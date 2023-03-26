@@ -49,8 +49,8 @@ app.listen(3000, function () {
 </html>
 ```
 
-* In index.js, connect the template by replaceing Hello World line res.render('index');
-* Run again: node index.js
+* In index.js, connect the template by replaceing Hello World line ```res.render('index');```
+* Run again: ```node index.js```
 * Set up POST route:
 
 ```
@@ -59,7 +59,7 @@ app.post('/', function (req, res) {
 })
 ```
 
-* install Middleware: npm install body-parser --save
+* install Middleware: ```npm install body-parser --save```
 * Edit index.js to add middleware:
 
 ```
@@ -77,8 +77,8 @@ app.post('/', function (req, res) {
 })
 ```
 
-* Test it (to make sure city shows in console): node index.js
-* http://localhost:3000/
+* Test it (to make sure city shows in console): ```node index.js```
+* [http://localhost:3000/](http://localhost:3000/)
 * Setting up our URL - Include at top of index.js:
 
 ```
@@ -115,7 +115,7 @@ request(url, function (err, response, body) {
 }
 ```
 
-* Install request module npm install request --save
+* Install request module ```npm install request --save```
 * Update ejs template code to reflect the what we get back from the api
 
 ```
