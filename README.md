@@ -7,7 +7,7 @@
 * npm install --save express
 * install in index.js
 
-'''
+```
 const express = require('express')
 const app = express()
 
@@ -18,7 +18,7 @@ app.get('/', function (req, res) {
 app.listen(3000, function () {
   console.log('Example app listening on port 3000!')
 })
-'''
+```
 
 * Run: node index.js
 * Now open your browser and visit: http://localhost:3000
