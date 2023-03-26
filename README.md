@@ -62,19 +62,73 @@ app.post('/', function (req, res) {
 * install Middleware: npm install body-parser --save
 * Edit index.js to add middleware:
 
+```
+const bodyParser = require('body-parser');
+// ...
+app.use(bodyParser.urlencoded({ extended: true }));
+```
+
 * In index.js - log city to the console (add to existing post):
+
+```
+app.post('/', function (req, res) {
+  res.render('index');
+  console.log(req.body.city);
+})
+```
 
 * Test it (to make sure city shows in console): node index.js
 * http://localhost:3000/
 * Setting up our URL - Include at top of index.js:
 
+```
+const request = require('request');
+const apiKey = '*****************';
+```
+
 * Setting up our URL - In index.js POST section add:
+
+```
+let city = req.body.city;
+let url = `http://api.openweathermap.org/data/2.5/weather?q=${city}&units=imperial&appid=${apiKey}`
+```
 
 * Make our API call (inside POST request)
 
+```
+request(url, function (err, response, body) {
+    if(err){
+      res.render('index', {weather: null, error: 'Error, please try again'});
+```
+
 * Display the weather
+
+```
+} else {
+  let weather = JSON.parse(body)
+  if(weather.main == undefined){
+    res.render('index', {weather: null, error: 'Error, please try again'});
+  } else {
+    let weatherText = `It's ${weather.main.temp} degrees in ${weather.name}!`;
+    res.render('index', {weather: weatherText, error: null});
+  }
+}
+```
 
 * Install request module npm install request --save
 * Update ejs template code to reflect the what we get back from the api
 
+```
+<% if(weather !== null){ %>
+  <p><%= weather %></p>
+<% } %>
+<% if(error !== null){ %>
+  <p><%= error %></p>
+<% } %>
+```
+
 * add more text:
+```
+let weatherTextExpanded = `It's ${weather.main.temp} degrees, with
+  ${weather.main.humidity}% humidity in ${weather.name}!`;
+```
