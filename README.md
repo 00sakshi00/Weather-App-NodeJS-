@@ -20,11 +20,11 @@ app.listen(3000, function () {
 })
 ```
 
-* Run: node index.js
+* Run: ```node index.js```
 * Now open your browser and visit: [http://localhost:3000](http://localhost:3000)
-* Install template system: npm install ejs --save
-* Edit index.js: app.set('view engine', 'ejs')
-* Create directory/file: views\index.ejs
+* Install template system: ```npm install ejs --save```
+* Edit index.js: ```app.set('view engine', 'ejs')```
+* Create directory/file: ```views\index.ejs```
 * Edit into index.ejs file basic boilerplate for front end:
 
 ```
