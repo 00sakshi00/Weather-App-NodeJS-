@@ -1,5 +1,7 @@
 # WeatherApp NodeJS
 
+* Get API Key.... [here](https://openweathermap.org/)
+
 * Create an empty directory named weather-app.
 * Open up your console, navigate to our new directory and run npm init.
 * Fill out the required information to initialize our project.
